@@ -43,7 +43,7 @@ spec:
               cpu: 500m
               memory: 512Mi
 
-          # 🔥 Startup probe (prevents early restarts)
+          # Startup probe (prevents early restarts)
           startupProbe:
             httpGet:
               path: /actuator/health
@@ -51,7 +51,7 @@ spec:
             failureThreshold: 30
             periodSeconds: 10
 
-          # ✅ Readiness probe (when pod is ready to serve traffic)
+          # Readiness probe (when pod is ready to serve traffic)
           readinessProbe:
             httpGet:
               path: /actuator/health
@@ -61,7 +61,7 @@ spec:
             timeoutSeconds: 5
             failureThreshold: 5
 
-          # ✅ Liveness probe (checks if app is alive)
+          # Liveness probe (checks if app is alive)
           livenessProbe:
             httpGet:
               path: /actuator/health
